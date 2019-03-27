@@ -45,6 +45,7 @@ void insert_array(int *a, int pos, int data, int *size)
 		*(a + pos) = data;
 		memcpy(a + pos + 1, p, cnt);
 		*size += 1;
+		free(p);
 	}
 	else
 	{
@@ -70,6 +71,7 @@ void remove_array(int *a, int pos, int *size)
 		memcpy(p, a + pos+1,cnt);
 		memcpy(a + pos , p, cnt);
 		*size -= 1;
+		free(p);
 	}
 	else
 	{
